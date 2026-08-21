@@ -1,312 +1,108 @@
 # Day 5 - Practical Basic Git Commands
 
-## Assignment 1 - Create a Git Repository
+### Assignments 1: Clone vs Fork
 
-### 1. Create a folder named `Day5_Practice`
+**Objective:** Clearly understand the difference between Clone and Fork.
 
-```bash
-mkdir Day5_Practice
+**Tasks:**
+1. What is **Clone**? Explain in your own words.
+2. What is **Fork**? Explain in your own words.
+3. Create a comparison table between **Clone** and **Fork** (at least 5 points).
+4. When should you use Fork instead of Clone?
+5. Write one real-life example where Fork is useful.
+
+<img width="675" height="386" alt="image" src="https://github.com/user-attachments/assets/be7d5d88-b050-417f-8137-f4ed6c5cbb1d" />
+<img width="622" height="172" alt="image" src="https://github.com/user-attachments/assets/8092c445-3216-4bb7-98aa-0575eb00cbb6" />
+
+<img width="675" height="145" alt="image" src="https://github.com/user-attachments/assets/29c21ab3-f4ec-4dc7-8e96-ec7891fc27e8" />
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/2cb1826c-92c5-4ca2-a4ec-66641ac04c55" />
+
+
+### Assignment 2: git status, git add & git commit (Conceptual)
+
+**Objective:** Understand the purpose of basic Git commands.
+
+**Tasks:**
+1. What does `git status` show? Write any 3 common messages and their meanings.
+2. What is the difference between:
+   - `git add filename`
+   - `git add .`
+3. Why do we need a **Staging Area**? Explain in 3–4 lines.
+4. Write 4 **good** commit messages and 4 **bad** commit messages.
+5. Does `git commit` upload code to GitHub? Explain why or why not.
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/2989318b-c6a3-47c0-b9e8-8b5403639cea" />
+
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/736fcd36-f622-46eb-8e4e-173cad067883" />
+
+### Assignment 3: Practical – Clone + Basic Workflow
+
+**Objective:** Perform the complete basic Git workflow.
+
+**Tasks:**
+1. Fork any simple public repository **or** use your own repository.
+2. Clone it to your local system.
+3. Create a new file named `day5.txt` and write:
+   - Your full name
+   - One Git command you learned today
+4. Perform the following commands:
+   ```bash
+   git status
+   git add .
+   git status
+   git commit -m "Added day5 practice file"
+   git push origin main
+   ```
+5. Verify that the file appears on GitHub.
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/acf37f00-432f-4741-9fa1-c1baf80a6d93" />
+
+### Assignment 4: Command Flow & Movement
+
+**Objective:** Understand how files move in Git.
+
+**Tasks:**
+1. Complete the flow:
+
 ```
-
-### 2. Move inside the folder
-
-```bash
-cd Day5_Practice
-```
-
-### 3. Initialize the folder as a Git repository
-
-```bash
-git init
-```
-
-The `git init` command initializes the current folder as a Git repository. After running it, Git creates a hidden `.git` folder.
-
-### 4. Check the status of the repository
-
-```bash
-git status
-```
-
-The `git status` command shows the current state of the repository and tells us about untracked, modified and staged files.
-
----
-
-## Assignment 2 - Add and Commit Files
-
-### 1. Create a file named `index.html`
-
-```bash
-touch index.html
-```
-
-### 2. Check the status
-
-```bash
-git status
-```
-
-The file will appear as an **untracked file** because Git has not started tracking it yet.
-
-### 3. Add the file to the Staging Area
-
-```bash
-git add index.html
-```
-
-The `git add` command moves the selected file from the Working Directory to the Staging Area.
-
-### 4. Check the status again
-
-```bash
-git status
-```
-
-Now `index.html` will be shown as a staged file.
-
-### 5. Commit the file
-
-```bash
-git commit -m "Added index.html"
-```
-
-The `git commit` command saves the staged changes into the Git repository.
-
----
-
-## Assignment 3 - Working with Multiple Files
-
-### 1. Create three files
-
-```bash
-touch home.html about.html contact.html
-```
-
-### 2. Check the status
-
-```bash
-git status
-```
-
-Git will show the three files as untracked files.
-
-### 3. Add all three files to the Staging Area
-
-```bash
-git add home.html about.html contact.html
-```
-
-### 4. Commit the files
-
-```bash
-git commit -m "Added website pages"
-```
-
-This creates a new commit containing the three HTML files.
-
-### 5. Add all changes at once
-
-We can also use:
-
-```bash
-git add .
-```
-
-The `git add .` command stages all the changes in the current directory and its subdirectories.
-
----
-
-## Assignment 4 - Making and Checking Changes
-
-### 1. Modify `index.html`
-
-I added some content to the `index.html` file.
-
-For example:
-
-```html
-<h1>My First Git Project</h1>
-```
-
-### 2. Check the status
-
-```bash
-git status
-```
-
-Git will show that `index.html` has been modified.
-
-### 3. Check what has changed
-
-```bash
-git diff
-```
-
-The `git diff` command shows the changes made to the files since the last commit.
-
-### 4. Stage the modified file
-
-```bash
-git add index.html
-```
-
-### 5. Commit the changes
-
-```bash
-git commit -m "Updated index page"
-```
-
-Now the changes are saved as a new commit.
-
----
-
-## Assignment 5 - Git Log
-
-### 1. View the complete commit history
-
-```bash
-git log
-```
-
-The `git log` command displays the commit history of the repository.
-
-It normally shows information such as:
-
-* Commit ID
-* Author
-* Date
-* Commit message
-
-### 2. View a short commit history
-
-```bash
-git log --oneline
-```
-
-This command shows each commit in a short one-line format, which makes the history easier to read.
-
-### 3. Why is Git history useful?
-
-Git history is useful because it allows us to see the changes made to a project over time. It also helps us understand who made a change and when it was made.
-
----
-
-## Assignment 6 - Unstage a File
-
-### 1. Create a new file
-
-```bash
-touch test.txt
-```
-
-### 2. Stage the file
-
-```bash
-git add test.txt
-```
-
-### 3. Remove the file from the Staging Area
-
-```bash
-git restore --staged test.txt
-```
-
-This command removes `test.txt` from the Staging Area but does not delete the actual file.
-
-### 4. Check the status
-
-```bash
-git status
-```
-
-Now `test.txt` will appear as an untracked file again.
-
----
-
-## Assignment 7 - Basic Git Commands
-
-| Command                | Purpose                                     |
-| ---------------------- | ------------------------------------------- |
-| `git init`             | Creates a new Git repository.               |
-| `git status`           | Shows the current status of the repository. |
-| `git add`              | Adds changes to the Staging Area.           |
-| `git add .`            | Adds all changes to the Staging Area.       |
-| `git commit`           | Saves staged changes in the repository.     |
-| `git log`              | Shows the complete commit history.          |
-| `git log --oneline`    | Shows a short commit history.               |
-| `git diff`             | Shows changes that have not been staged.    |
-| `git restore --staged` | Removes a file from the Staging Area.       |
-
----
-
-## Assignment 8 - Understand the Git Workflow
-
-The basic Git workflow is:
-
-```text
 Working Directory
-        ↓
-    git add
-        ↓
+       ↓  (Which command?)
 Staging Area
-        ↓
-   git commit
-        ↓
-   Repository
+       ↓  (Which command?)
+Local Repository
+       ↓  (Which command?)
+Remote Repository (GitHub)
 ```
 
-First, we create or modify files in the **Working Directory**. Then we use `git add` to select the changes that we want to save. Finally, `git commit` stores those changes permanently in the Git Repository.
+2. Fill in the table:
 
----
+| Command       | From                | To                      |
+|---------------|---------------------|-------------------------|
+| `git add`     |                     |                         |
+| `git commit`  |                     |                         |
+| `git push`    |                     |                         |
 
-## Assignment 9 - Practical Questions
+3. What is the use of the `-u` flag in `git push -u origin main`?
 
-### 1. What is the difference between `git add` and `git commit`?
 
-`git add` moves the changes to the Staging Area, while `git commit` saves the staged changes into the repository.
+<img width="675" height="337" alt="image" src="https://github.com/user-attachments/assets/ac7d5dcd-f048-474a-8a01-6164f52cf44f" />
 
-In simple words:
+<img width="622" height="57" alt="image" src="https://github.com/user-attachments/assets/e8baeec0-e926-46d2-9f9d-481553b2e89b" />
 
-```text
-git add     → Select changes
-git commit  → Save changes
-```
 
-### 2. What is the difference between `git status` and `git log`?
+<img width="675" height="233" alt="image" src="https://github.com/user-attachments/assets/7d962490-e59e-435d-b3c1-75718ebb093d" />
 
-`git status` shows the current state of our working repository, such as untracked or modified files. `git log` shows the previous commits and the history of the project.
+### Assignment 5: Overall Understanding + Reflection
 
-### 3. Why should we write meaningful commit messages?
+**Objective:** Test complete understanding of Day 5.
 
-Meaningful commit messages help us understand what was changed in each commit. They make the project history easier to read and are especially useful when working in a team.
+**Tasks:**
+1. Write the correct sequence of commands for the basic workflow after making changes in files.
+2. Answer in 3–5 lines each:
+   - Why should we run `git status` frequently?
+   - What happens if we commit without staging?
+   - What is the difference between local commit and push?
+3. Write **4 key takeaways** from Day 5.
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/4ae31038-d2b6-4316-aee8-544dadb5b601" />
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/3654edb0-ca17-4bf5-945b-bc6ee1d3feb8" />
 
-For example:
 
-```bash
-git commit -m "Added login page"
-```
 
-is better than:
-
-```bash
-git commit -m "changes"
-```
-
-### 4. Can we commit without using `git add`?
-
-Normally, we first use `git add` to put the changes into the Staging Area and then use `git commit`. This gives us control over which changes should be included in the commit.
-
----
-
-## Assignment 10 - Reflection
-
-### Four key takeaways from Day 5
-
-1. I learned how to create and initialize a Git repository using `git init`.
-2. I learned how to use `git add` and `git commit` to save my project changes.
-3. I understood how `git status`, `git diff` and `git log` help us check our project and its history.
-4. I learned that the Staging Area gives us control over which changes we want to include in a commit.
-
-### What I understood about Git today
-
-Today I understood how Git is practically used to manage a project. I learned that after making changes, we can check them using `git status` and `git diff`, stage them using `git add`, and finally save them using `git commit`. This makes it easier to maintain the history of our project.
