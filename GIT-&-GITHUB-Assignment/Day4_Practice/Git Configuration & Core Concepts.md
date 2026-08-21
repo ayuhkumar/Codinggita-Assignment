@@ -1,311 +1,101 @@
 # Day 4 - Git Configuration & Core Concepts
 
-## Assignment 1 - Git Configuration
+### Assignment 1: Git Configuration (Practical)
 
-### 1. What is Git Configuration?
+**Objective:** Configure Git and verify the settings.
 
-Git Configuration is used to set the basic information and preferences that Git uses while working with our projects. It includes details like our username, email and other Git settings.
+**Tasks:**
+1. Open Git Bash and set your name and email using the correct commands.
+2. Verify the configuration using:
+   - `git config --global user.name`
+   - `git config --global user.email`
+   - `git config --list`
+3. Take a screenshot of the output of `git config --list`.
+4. Answer:
+   - Why do we use the `--global` flag?
+   - Do we need to configure name and email for every new project? Why or why not?
 
-### 2. Why do we need to configure username and email in Git?
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/5cd750bb-936c-4b41-9d3a-4f446b5ff9e2" />
 
-We need to configure our username and email so that Git can identify who made a particular commit. This information is saved with every commit and helps in tracking the changes made by different users.
+### Assignment 2: Understanding Core Concepts
 
-### 3. Set your Git username
+**Objective:** Explain important Git terms in your own words.
 
-I used the following command to set my Git username:
+**Tasks:**
+1. Define the following terms (3–5 lines each):
+   - Repository
+   - Branch
+   - Clone
+   - Fork
+   - Staging Area
+   - Commit
 
-```bash
-git config --global user.name "Your Name"
+2. What is the difference between **Clone** and **Fork**?
+
+3. What is the difference between **Local Repository** and **Remote Repository**?
+
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/1eacc409-f423-4291-8262-4f4da0be95c6" />
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/d72dc0f4-6018-40f0-9177-008c75f4b4dc" />
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/73e0816b-5986-479d-a24d-73844f649a4b" />
+
+### Assignment 3: Local vs Remote + Flow
+
+**Objective:** Understand the movement of code in Git.
+
+**Tasks:**
+1. Create a comparison table between **Local Repository** and **Remote Repository** with at least 4 points.
+
+2. Draw or write the basic Git flow:
+
+```
+Working Directory → ? → ? → Remote Repository
 ```
 
-### 4. Set your Git email
+Fill in the missing stages and the commands used at each step.
 
-I used the following command to set my Git email:
+3. Answer:
+   - Where does `git add` move the files?
+   - Where does `git commit` save the changes?
+   - Does `git commit` upload code to GitHub? Explain.
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/cc9a94d2-0a70-4da6-ace1-4452fd8a392d" />
 
-```bash
-git config --global user.email "your-email@example.com"
-```
 
-### 5. Check the configured username and email
+### Assignment 4: Conceptual Clarity
 
-To check my Git username:
+**Objective:** Test clear understanding of Day 4 concepts.
 
-```bash
-git config --global user.name
-```
+**Tasks:**
+1. Fill in the blanks:
+   - A ______ is a project folder that also stores the complete history of changes.
+   - By default, every new repository has a branch named ______.
+   - ______ means copying a remote repository to your local computer.
+   - ______ means creating a copy of someone else’s repository under your own GitHub account.
+   - Only ______ files can be committed.
 
-To check my Git email:
+2. Match the following:
 
-```bash
-git config --global user.email
-```
+| Term            | Meaning                                      |
+|-----------------|----------------------------------------------|
+| Staging Area    |                                              |
+| Commit          |                                              |
+| Clone           |                                              |
+| Fork            |                                              |
+| Remote Repo     |                                              |
 
-### 6. Check all Git configurations
+3. Write 4 key points you learned in Day 4.
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/bfb3ecd5-6163-4934-98b5-9bba44f9258c" />
+### Assignment 5: Reflection + Real-life Understanding
 
-```bash
-git config --list
-```
+**Objective:** Connect concepts to real usage.
 
-This command shows the Git configuration settings available on my system.
+**Tasks:**
+1. Why is it important to set `user.name` and `user.email` before making commits?
+2. In a team project of 4 students, why is using branches helpful?
+3. When would you use **Fork** instead of **Clone**?
+4. Explain the following sentence in your own words:  
+   “Commit happens locally, Push happens to remote.”
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/dd108c62-0fe2-4f8f-8d92-b1f4e1b65181" />
+<img width="675" height="846" alt="download" src="https://github.com/user-attachments/assets/e97f8743-3120-4277-9396-fc979e0316b2" />
 
----
 
-## Assignment 2 - Git Configuration Levels
 
-### 1. What are the three levels of Git configuration?
-
-Git has three main configuration levels:
-
-1. **System**
-2. **Global**
-3. **Local**
-
-### 2. Explain System-level configuration.
-
-System-level configuration applies to all users and all repositories on the computer. It is generally used when we want to set a common configuration for the whole system.
-
-```bash
-git config --system
-```
-
-### 3. Explain Global-level configuration.
-
-Global configuration applies to one particular user and is used for all Git repositories of that user.
-
-For example:
-
-```bash
-git config --global user.name "Your Name"
-```
-
-### 4. Explain Local-level configuration.
-
-Local configuration applies only to the current Git repository. It can be used when we want different settings for a particular project.
-
-For example:
-
-```bash
-git config --local user.name "Your Name"
-```
-
-### 5. Difference between Global and Local configuration
-
-| Global Configuration                   | Local Configuration                          |
-| -------------------------------------- | -------------------------------------------- |
-| Applies to all repositories of a user. | Applies only to one repository.              |
-| It is useful for general Git settings. | It is useful for project-specific settings.  |
-| Example: global username.              | Example: different username for one project. |
-
----
-
-## Assignment 3 - Creating a Git Repository
-
-### 1. Create a folder named `Day4_Practice`
-
-```bash
-mkdir Day4_Practice
-```
-
-### 2. Move inside the folder
-
-```bash
-cd Day4_Practice
-```
-
-### 3. Initialize the folder as a Git repository
-
-```bash
-git init
-```
-
-The `git init` command creates a new Git repository in the current folder.
-
-### 4. Check the status of the repository
-
-```bash
-git status
-```
-
-The `git status` command shows the current state of our Git repository. It tells us about modified, untracked and staged files.
-
-### 5. Check the hidden `.git` folder
-
-```bash
-ls -la
-```
-
-After using `git init`, a hidden `.git` folder is created inside the project folder.
-
-### 6. What is the `.git` folder?
-
-The `.git` folder contains important information required by Git to manage the repository. It stores the repository's history, configuration and other internal Git data.
-
-We should **not manually delete or modify** this folder because it can damage the Git repository.
-
----
-
-## Assignment 4 - Git Core Concepts
-
-### 1. What is a Working Directory?
-
-The Working Directory is the folder where we currently work on our project files. When we create or modify files, those changes first appear in the Working Directory.
-
-### 2. What is the Staging Area?
-
-The Staging Area is an intermediate area where we select the changes that we want to include in the next commit.
-
-For example:
-
-```bash
-git add file.txt
-```
-
-This command moves `file.txt` to the Staging Area.
-
-### 3. What is a Repository?
-
-A Repository is the place where Git stores the history of our project. It contains the commits and other information required to track the changes in the project.
-
-### 4. Explain the basic Git workflow.
-
-The basic Git workflow is:
-
-```text
-Working Directory
-       ↓
-Staging Area
-       ↓
-Repository
-```
-
-First, we create or modify files in the Working Directory. Then we use `git add` to move the required changes to the Staging Area. Finally, we use `git commit` to save those changes permanently in the Git Repository.
-
-### 5. What is a Commit?
-
-A commit is a saved version of our changes in a Git repository. It creates a record of what changes were made at a particular point in time.
-
-Example:
-
-```bash
-git commit -m "Added my first file"
-```
-
-The message helps us understand what was changed in that commit.
-
----
-
-## Assignment 5 - Practical Git Commands
-
-### 1. Create a file named `index.html`
-
-```bash
-touch index.html
-```
-
-### 2. Check the repository status
-
-```bash
-git status
-```
-
-Since the file is not tracked yet, Git will show `index.html` as an untracked file.
-
-### 3. Add the file to the Staging Area
-
-```bash
-git add index.html
-```
-
-### 4. Check the status again
-
-```bash
-git status
-```
-
-Now Git will show `index.html` as a staged file.
-
-### 5. Commit the file
-
-```bash
-git commit -m "Added index.html"
-```
-
-This saves the staged changes into the Git repository.
-
-### 6. Check the commit history
-
-```bash
-git log
-```
-
-This command displays the previous commits of the repository.
-
-### 7. View the commit history in a shorter format
-
-```bash
-git log --oneline
-```
-
-This shows the commits in a shorter and easier-to-read format.
-
----
-
-## Assignment 6 - Important Git Commands
-
-| Command             | Purpose                                    |
-| ------------------- | ------------------------------------------ |
-| `git config`        | Used to set and view Git configuration.    |
-| `git init`          | Creates a new Git repository.              |
-| `git status`        | Shows the current state of the repository. |
-| `git add`           | Adds changes to the Staging Area.          |
-| `git commit`        | Saves staged changes in the repository.    |
-| `git log`           | Shows the commit history.                  |
-| `git log --oneline` | Shows a short version of commit history.   |
-| `git diff`          | Shows the differences between changes.     |
-| `git help`          | Provides help about Git commands.          |
-
----
-
-## Assignment 7 - Conceptual Questions
-
-### 1. Why is Git configuration important?
-
-Git configuration is important because it provides Git with information about the user and controls how Git behaves. Username and email are especially important because they identify the person who created a commit.
-
-### 2. What happens when we run `git init`?
-
-When we run `git init`, Git creates a new repository in the current directory. It creates a hidden `.git` folder which stores the information needed to manage the repository.
-
-### 3. What is the difference between `git add` and `git commit`?
-
-`git add` moves our selected changes to the Staging Area, while `git commit` saves the staged changes into the Git repository.
-
-In simple words:
-
-```text
-git add       → Prepare changes
-git commit    → Save changes
-```
-
-### 4. Why is the Staging Area useful?
-
-The Staging Area allows us to select which changes should be included in the next commit. This is useful when a project has many changes but we only want to save some of them in a particular commit.
-
-### 5. What happens if we modify a file after committing it?
-
-If we modify a file after committing it, Git detects that the file has changed. The new changes are not automatically part of the previous commit. We need to use `git add` and `git commit` again to save the new changes.
-
----
-
-## Assignment 8 - Reflection
-
-### Four key takeaways from Day 4
-
-1. I learned how to configure my Git username and email using `git config`.
-2. I learned about the **System, Global and Local** configuration levels.
-3. I understood the basic Git workflow: **Working Directory → Staging Area → Repository**.
-4. I learned how to initialize a repository, stage files, create commits and check commit history.
-
-### What I understood about Git today
-
-Today I understood that Git does not directly save every change as a final version. First, we make changes in the Working Directory, then select them using `git add`, and finally save them using `git commit`. This makes it easier to manage and track the history of a project.
